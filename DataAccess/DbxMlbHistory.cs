@@ -102,7 +102,7 @@ namespace DataAccess
 
 
       public List<Batting1_app_Result> Batting1_app(string team, Nullable<int> year) {
-         string sp = "Batting1_app";
+         string sp = "Batting1_app_A";
          var list =
             con.Query<Batting1_app_Result>(
                sp,
@@ -150,7 +150,7 @@ namespace DataAccess
 
 
       public List<Batting1_cust_Result> Batting1_cust(Nullable<int> userTeamID) {
-         string sp = "Batting1_cust";
+         string sp = "Batting1_cust_A"; // "_A" is for 
          var list =
             con.Query<Batting1_cust_Result>(
                sp,

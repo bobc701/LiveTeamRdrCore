@@ -31,6 +31,12 @@ namespace LiveTeamRdrCore
          services.AddSwaggerGen(c => {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "LiveTeamRdrCore", Version = "v1" });
          });
+
+      // Per Trevoir...
+         //services.AddCors(opts => {
+         //   opts.AddPolicy("AllowAll",
+         //   b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+
          services.AddScoped<IDbxMlbHistory, DbxMlbHistory>();
          services.AddScoped<CTeamBldr>();
       }
@@ -44,6 +50,8 @@ namespace LiveTeamRdrCore
          }
 
          app.UseHttpsRedirection();
+
+         //app.UseCors("AllowAll"); //PerTWilliams
 
          app.UseRouting();
 
